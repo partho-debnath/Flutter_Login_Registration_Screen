@@ -17,6 +17,8 @@ For help getting started with Flutter development, view the
 ## Limitations
 - no any authentication system (Just UI design and some Validation check)
 
-## UI Screenshot
-- ![Login](https://user-images.githubusercontent.com/71305747/217067280-6ebbbcb0-503a-4031-86a9-17253c92acd4.png){:height="100px" width="100px"}
-- ![Registration](https://user-images.githubusercontent.com/71305747/217067347-089164ab-0789-4b8f-931b-a4d69604cd1e.png){:height="100px" width="100px"}
+# UI Screenshot
+## Login
+-<img src="https://user-images.githubusercontent.com/71305747/217067280-6ebbbcb0-503a-4031-86a9-17253c92acd4.png" width="50%" height="50%">
+## Registration
+-<img src="https://user-images.githubusercontent.com/71305747/217067347-089164ab-0789-4b8f-931b-a4d69604cd1e.png" width="50%" height="50%">
