@@ -15,9 +15,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
-  String? _emailErrorText = null;
-  String? _passwordErrorText = null;
-  String? _confirmPasswordErrorText = null;
+  String? _emailErrorText;
+  String? _passwordErrorText;
+  String? _confirmPasswordErrorText;
   bool _isHiddenPassword = true;
   bool _isHiddenConfirmPassword = true;
 
@@ -76,33 +76,34 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   void changeScreen() {
-    Navigator.of(context).pushNamed(LoginScreen.routeName, arguments: {});
+    Navigator.of(context)
+        .pushReplacementNamed(LoginScreen.routeName, arguments: {});
   }
 
-  Widget buildPasswordTextField(TextEditingController _newPasswordController,
-      String text, bool _isHidden, String? _newPasswordErrorText) {
+  Widget buildPasswordTextField(TextEditingController newPasswordController,
+      String text, bool isHidden, String? newPasswordErrorText) {
     return Column(
       children: <Widget>[
         const SizedBox(
           height: 15,
         ),
         TextField(
-          controller: _newPasswordController,
-          obscureText: _isHidden,
+          controller: newPasswordController,
+          obscureText: _isHiddenPassword,
           obscuringCharacter: '*',
           decoration: InputDecoration(
             label: Text(text),
             hintText: text,
-            errorText: _newPasswordErrorText,
+            errorText: newPasswordErrorText,
             prefixIcon: const Icon(Icons.password),
             suffixIcon: IconButton(
               icon: const Icon(Icons.remove_red_eye),
               onPressed: () {
                 setState(() {
-                  _isHidden = !_isHidden;
+                  _isHiddenPassword = !isHidden;
                 });
               },
-              tooltip: 'Show Password',
+              tooltip: 'Show $text',
             ),
             border: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.blue),
@@ -137,7 +138,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       Container(
                         width: 400,
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 20),
+                          horizontal: 10,
+                          vertical: 20,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.4),
                           border: Border.all(color: Colors.grey, width: 2),
@@ -194,48 +197,53 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           style: TextStyle(fontSize: 19),
                         ),
                       ),
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue.shade100,
-                        ),
-                        icon: const Icon(Icons.facebook),
-                        label: Text(
-                          'Sign in with Facebook',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.blue.shade900,
-                            fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: 250,
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red.shade100,
                           ),
-                        ),
-                        //
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red.shade100,
-                        ),
-                        child: RichText(
-                          text: TextSpan(
-                            text: 'G  ',
+                          icon: Image.network(
+                            'http://pngimg.com/uploads/google/google_PNG19635.png',
+                            width: 30,
+                            height: 30,
+                          ),
+                          label: Text(
+                            'Sign in with Google',
                             style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
                               color: Colors.red.shade900,
+                              fontWeight: FontWeight.bold,
                             ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: 'Sign in with Google    ',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.red.shade900,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                            ],
                           ),
+                          //
                         ),
-                        //
-                      )
+                      ),
+                      SizedBox(
+                        width: 250,
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue.shade100,
+                          ),
+                          icon: Image.network(
+                            'https://cdn.iconscout.com/icon/free/png-256/facebook-1464523-1239437.png?f=webp&w=256',
+                            height: 30,
+                            width: 30,
+                            scale: 0.3,
+                          ),
+                          label: Text(
+                            'Sign in with Facebook',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.blue.shade900,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          //
+                        ),
+                      ),
                     ],
                   ),
                 ),
