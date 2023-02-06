@@ -127,10 +127,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               children: <Widget>[
                 Image.asset(
                   'assets/images/background.jpg',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
+                  height: (MediaQuery.of(context).size.height * 0.88),
                 ),
                 Positioned(
-                  top: 30,
+                  top: 10,
                   right: 0,
                   left: 0,
                   child: Column(

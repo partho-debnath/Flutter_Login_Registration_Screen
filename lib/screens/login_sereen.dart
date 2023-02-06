@@ -73,9 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 Image.asset(
                   'assets/images/background.jpg',
                   fit: BoxFit.fill,
+                  height: (MediaQuery.of(context).size.height * 0.88),
                 ),
                 Positioned(
-                  top: 100,
+                  top: 60,
                   right: 0,
                   left: 0,
                   child: Column(
