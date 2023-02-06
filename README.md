@@ -19,11 +19,19 @@ For help getting started with Flutter development, view the
 
 # UI Screenshot
 ## Login
--<img src="https://user-images.githubusercontent.com/71305747/217067280-6ebbbcb0-503a-4031-86a9-17253c92acd4.png" width="50%" height="50%">
--<img src="https://user-images.githubusercontent.com/71305747/217073224-ba45707f-b8b8-4171-b12a-3f9ad175513c.png" width="50%" height="50%">
--<img src="https://user-images.githubusercontent.com/71305747/217073424-973eebcb-a230-46f8-8c56-5ffb97e49543.png" width="50%" height="50%">
-
+-<img src="https://user-images.githubusercontent.com/71305747/217077083-37b1a7c3-6c77-4baf-a58a-a9b1e849f86e.png" width="50%" height="50%">
+<br>
+-<img src="https://user-images.githubusercontent.com/71305747/217077102-fc6a5ee3-a3f3-4b92-8166-02d2435caa65.png" width="50%" height="50%">
+<br>
+-<img src="https://user-images.githubusercontent.com/71305747/217077122-fe2e4949-b060-42c6-b27a-13ecc44ef0e6.png" width="50%" height="50%">
+<br>
 
 ## Registration
--<img src="https://user-images.githubusercontent.com/71305747/217067347-089164ab-0789-4b8f-931b-a4d69604cd1e.png" width="50%" height="50%">
--<img src="https://user-images.githubusercontent.com/71305747/217073575-fb32ebb8-f7f9-4625-bb1b-9f2c3c39d1f7.png" width="50%" height="50%">
+
+-<img src="https://user-images.githubusercontent.com/71305747/217077517-8b6cba0e-c746-4a17-823e-81523ed55393.png" width="50%" height="50%">
+<br>
+-<img src="https://user-images.githubusercontent.com/71305747/217077544-a5c99f6b-ce91-4b4d-944a-72d98a6b7ff4.png" width="50%" height="50%">
+<br>
+-<img src="https://user-images.githubusercontent.com/71305747/217078042-aebbc3cf-5201-48ae-a9cd-5af9eb18dc6a.png" width="50%" height="50%">
+<br>
+
