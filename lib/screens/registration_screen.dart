@@ -80,8 +80,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         .pushReplacementNamed(LoginScreen.routeName, arguments: {});
   }
 
-  Widget buildPasswordTextField(TextEditingController newPasswordController,
-      String text, bool isHidden, String? newPasswordErrorText) {
+  Widget buildPasswordTextField(
+      TextEditingController newPasswordController,
+      String text,
+      bool isHidden,
+      String? newPasswordErrorText,
+      VoidCallback onPressed) {
     return Column(
       children: <Widget>[
         const SizedBox(
@@ -89,7 +93,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
         TextField(
           controller: newPasswordController,
-          obscureText: _isHiddenPassword,
+          obscureText: isHidden,
           obscuringCharacter: '*',
           decoration: InputDecoration(
             label: Text(text),
@@ -98,11 +102,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             prefixIcon: const Icon(Icons.password),
             suffixIcon: IconButton(
               icon: const Icon(Icons.remove_red_eye),
-              onPressed: () {
-                setState(() {
-                  _isHiddenPassword = !isHidden;
-                });
-              },
+              onPressed: onPressed,
               tooltip: 'Show $text',
             ),
             border: const OutlineInputBorder(
@@ -163,17 +163,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               ),
                             ),
                             buildPasswordTextField(
-                              _passwordController,
-                              'Password',
-                              _isHiddenPassword,
-                              _passwordErrorText,
-                            ),
+                                _passwordController,
+                                'Password',
+                                _isHiddenPassword,
+                                _passwordErrorText, () {
+                              setState(() {
+                                _isHiddenPassword = !_isHiddenPassword;
+                              });
+                            }),
                             buildPasswordTextField(
-                              _confirmPasswordController,
-                              'Confirm Password',
-                              _isHiddenConfirmPassword,
-                              _confirmPasswordErrorText,
-                            ),
+                                _confirmPasswordController,
+                                'Confirm Password',
+                                _isHiddenConfirmPassword,
+                                _confirmPasswordErrorText, () {
+                              setState(() {
+                                _isHiddenConfirmPassword =
+                                    !_isHiddenConfirmPassword;
+                              });
+                            }),
                             const SizedBox(
                               height: 15,
                             ),
